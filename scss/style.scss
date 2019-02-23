@@ -1,0 +1,28 @@
+
+$hero-height: 60vh;
+
+.hero-section {
+  background: url('https://static.pexels.com/photos/248064/pexels-photo-248064.jpeg') 50% no-repeat;
+  background-size: cover;
+  height: $hero-height;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .hero-section-text {
+    padding-left: 10%;
+    text-align: left;
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
+    max-width: 50%;
+  }
+}
+
+.grid-container-top-pad {
+    padding-top: 30px;
+}
+
+.card {
+  margin: 0 auto;
+}
