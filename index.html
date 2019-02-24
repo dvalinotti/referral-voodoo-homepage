@@ -1,42 +1,60 @@
 <!doctype html>
 <html class="no-js" lang="en">
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+
+
+</style>
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Foundation for Sites</title>
+  <link rel="stylesheet" href="http://spring.edu/foundation-flex/css/foundation.min.css">
+  <link rel="stylesheet" href="scss/style.scss">
   <link rel="stylesheet" href="css/app.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/foundation.min.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/components/modal.js"></script>
+  <script src="js/main.js" type="module"></script>
 </head>
 
 <body>
   <div class="top-bar-container">
-  <div class="top-bar">
-    <div class="top-bar-left">
-      <ul class="dropdown menu">
-        <li class="menu-text">Voodoo</li>
-      </ul>
-    </div>
-    <div class="top-bar-right auto">
-      <ul class="menu">
-        <li>
-          <a href="#">123-456-7890</a>
-        </li>
-        <li><button type="button" class="button">Get Started</button></li>
-      </ul>
+
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu">
+          <img src="/assets/logo.png">
+        </ul>
+      </div>
+      <div class="top-bar-right auto">
+        <ul class="menu">
+          <li class="menu-phone">
+            <i class="fas fa-phone"></i>
+            <a href="#">123-456-7890</a>
+          </li>
+          <li><button type="button" class="button button-edit" onclick="startup()">Get Started</button></li>
+        </ul>
+
+      </div>
 
     </div>
-
   </div>
-</div>
   <div class="grid-container-full">
     <div class="hero-section">
       <div class="hero-section-text">
         <h1>Word of Mouth Marketing</h1>
-        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in laoreet lectus. Proin ac felis id massa
-          auctor accumsan. Curabitur egestas ligula ac nisl fringilla sollicitudin.</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in laoreet lectus. Proin ac felis id massa
+          auctor accumsan. Curabitur egestas ligula ac nisl fringilla sollicitudin.</p>
+        <button class="button-edit--secondary button-shadow" onclick="startup()">Get Started</button>
       </div>
     </div>
   </div>
@@ -66,38 +84,38 @@
     <div class="grid-x">
       <div class="cell auto"></div>
       <div class="cell small-6">
-        <h1 style="text-align: center">WHAT IT DOES</h1>
+        <h1 style="text-align: center">WHAT YOU GET</h1>
       </div>
       <div class="cell auto"></div>
     </div>
-    <div class="grid-x">
+    <div class="grid-x grid-container-top-pad">
       <div class="cell small-4">
         <div class="card" style="width: 300px;">
           <img src="https://via.placeholder.com/500x320">
-          <div class="card-section">
-            <h4>This is a card.</h4>
+          <div class="card-section text-center">
+            <h4 class="card-title">This is a card.</h4>
             <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
         </div>
       </div>
       <div class="cell small-4">
-          <div class="card" style="width: 300px;">
-            <img src="https://via.placeholder.com/500x320">
-            <div class="card-section">
-              <h4>This is a card.</h4>
-              <p>It has an easy to override visual style, and is appropriately subdued.</p>
-            </div>
+        <div class="card" style="width: 300px;">
+          <img src="https://via.placeholder.com/500x320">
+          <div class="card-section text-center">
+            <h4 class="card-title">This is a card.</h4>
+            <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
         </div>
-        <div class="cell small-4">
-            <div class="card" style="width: 300px;">
-              <img src="https://via.placeholder.com/500x320">
-              <div class="card-section">
-                <h4>This is a card.</h4>
-                <p>It has an easy to override visual style, and is appropriately subdued.</p>
-              </div>
-            </div>
+      </div>
+      <div class="cell small-4">
+        <div class="card" style="width: 300px;">
+          <img src="https://via.placeholder.com/500x320">
+          <div class="card-section text-center">
+            <h4 class="card-title">This is a card.</h4>
+            <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="grid-container grid-container-top-pad" style="background-color: gray">
@@ -113,7 +131,7 @@
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-icon">
-          <img src="https://via.placeholder.com/21x21">
+          <i class="fas fa-check-double"></i>
         </div>
         <div class="timeline-content">
           <p class="timeline-content-date">2069</p>
@@ -121,26 +139,26 @@
         </div>
       </div>
       <div class="timeline-item">
-          <div class="timeline-icon">
-            <img src="https://via.placeholder.com/21x21">
-          </div>
-          <div class="timeline-content right">
-            <p class="timeline-content-date">2069</p>
-            <p>This is the content.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-            <div class="timeline-icon">
-              <img src="https://via.placeholder.com/21x21">
-            </div>
-            <div class="timeline-content">
-              <p class="timeline-content-date">2069</p>
-              <p>This is the content.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
         <div class="timeline-icon">
-          <img src="https://via.placeholder.com/21x21">
+          <i class="fas fa-check-double"></i>
+        </div>
+        <div class="timeline-content right">
+          <p class="timeline-content-date">2069</p>
+          <p>This is the content.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <i class="fas fa-check-double"></i>
+        </div>
+        <div class="timeline-content">
+          <p class="timeline-content-date">2069</p>
+          <p>This is the content.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-icon">
+          <i class="fas fa-check-double"></i>
         </div>
         <div class="timeline-content right">
           <p class="timeline-content-date">2069</p>
@@ -149,18 +167,42 @@
       </div>
     </div>
   </div>
-  <div class="grid-container grid-container-top-pad" style="background-color: lightgray">
+  <div id="signup" class="grid-container grid-container-top-pad" style="background-color: lightgray">
     <div class="grid-x">
       <div class="cell auto"></div>
       <div class="cell small-6">
+
+        <!--_______________________________________________________________________START FORM CONTACT___________________-->
         <div style="text-align: center">
           <h1>SIGN UP TODAY!</h1>
-          <button type="button" class="button">Get Started</button>
+          <button class="button" id="popup-getstarted" onclick="popup_getstarted()">Get Started</button>
+          <div id="modal-safe" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <form>
+                <label for="name"> Full Name</label>
+                <input id="name" type="text" name="name" autocomplete="off" placeholder="Full Name" Required><br>
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" name="email" autocomplete="off" placeholder="Email" Required><br>
+                <label for="number">Phone Number</label>
+                <input id="phone-number-field" type='tel' onkeydown="if(event.keyCode == 13) control_phone()"pattern='[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}'><br>
+                <label for="comment">Comment</label>
+                <textarea id="comment" type="textarea">Enter your query.</textarea>
+                <button class="button-edit button-edit--secondary" type="submit" id="contactinfo" value="Submit">Submit<button>
+              </form>
+              <!--_______________________________________________________________________END FORM CONTACT___________________-->
+
+            </div>
+          </div>
         </div>
       </div>
-      <div class="cell auto"></div>
+      <div class="cell auto"> </div>
     </div>
+
+
   </div>
+  </div>
+
 </body>
 
 </html>
