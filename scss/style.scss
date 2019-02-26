@@ -233,7 +233,7 @@ $timeline-item-card-radius: $global-radius;
       padding: 6px;
 
       color: $timeline-icon-font-color;
-      border: 8px solid #808080;
+      border: 8px solid #FFFFFF !important;
 
       // img,
       // svg {
@@ -248,7 +248,8 @@ $timeline-item-card-radius: $global-radius;
     }
 
     .timeline-content {
-      padding: 20px;
+      //padding: 20px;
+      padding-top: 10px  !important;
       text-align: right;
       transition: $timeline-transition;
       width: 45%;
@@ -371,30 +372,58 @@ body {
   }
 
 }
-
-.hero-section {
-  background-size: contain !important;
+.grid-container-full {
+  height: 700px;
+  background: url('../assets/hero-mobile.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: bottom;
+
+  @include breakpoint(x-small) {
+    height: 750px;
+  }
+  @include breakpoint(small-med) {
+    height: 850px;
+  }
+  @include breakpoint(medium) {
+    background: url('../assets/hero-tablet.png');
+    height: 400px;
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+
+  @include breakpoint(large) {
+    width: 75;
+    margin: 0 auto;
+  }
+
+  .hero-section {
+
   height: $hero-height;
   width: 75%;
+
   margin: 0 auto;
   text-align: center;
   display: flex;
+  background: none;
   align-items: center;
   justify-content: flex-start;
-  height: 60vw;
+  height: 100%;
+
   font-family: Montserrat;
-  background: url('../assets/hero-mobile.png') 50% no-repeat;
+
   flex-direction: column;
 
   @include breakpoint(medium) {
-    background: url('../assets/hero.png') 50% no-repeat;
-    background-size: contain;
+    background-size: bottom;
+    width: 85%;
     flex-direction: row;
-    height: 400px;
+    height: 100%;
   }
   @include breakpoint(large) {
     background-position: right;
+    width: 90%;
   }
 
 
@@ -431,7 +460,7 @@ body {
 
   }
 
-
+}
 }
 .button-edit--secondary {
   background-color: #27B7B7;
@@ -442,6 +471,8 @@ body {
 .grid-container-top-pad {
     padding-top: 30px;
 }
+
+//---- CARD SECTION ----
 
 .card {
   margin: 0 auto;
@@ -454,6 +485,10 @@ body {
   font-weight: bold;
   text-transform: uppercase;
 }
+
+
+
+//--- END OF CARD SECTION ---
 
 li {
 .button-edit{
@@ -486,4 +521,101 @@ $greyish: #c4c4c4;
     }}
   }
 }
+}
+//Sign up today section
+.grid-container-getstarted{
+	background-color: white;
+  margin: 120px auto;
+	.getstarted{
+		font-family: Montserrat;
+	}
+}
+.button-getstarted{
+	background-color: #27B7B7;//color -> green-ish
+	color: white;
+	padding:10px 24px;
+	border-radius: 5px
+}
+//hover color brightness decreases by 10%
+.button-getstarted:hover{
+	background-color: #27B7B7; //color -> green-ish
+	filter:brightness(90%);//out of 100%(full brightness) only 90% is shown
+	color: white;
+	padding:10px 24px;
+	border-radius: 5px
+}
+// end of getstarted section
+.bold {
+  font-weight: bold;
+}
+.tablet-flex-switch {
+  flex-direction: column;
+
+  @include breakpoint(large){
+    flex-direction: row;
+  }
+
+  .media-object-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    @include breakpoint(large) {
+      width: 50%;
+    }
+    .thumbnail {
+      border: none ;
+      iframe { max-width: 100%; }
+    }
+  }
+}
+
+.bottom-pad {
+  padding-bottom: 30px;
+}
+
+.how-it-works-container {
+  padding: 30px 0 !important;
+  max-width: 100% !important;
+  background-color: #27B7B7;
+  color: white;
+  height: 600px;
+  @include breakpoint(medium) {
+    height: 550px;
+  }
+  @include breakpoint(large) {
+    height: 400px;
+  }
+}
+
+.social-footer {
+
+  padding: 2rem;
+  background: #27B7B7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .social-footer-left {
+    a {
+      img {
+        height: 50px;
+        width: auto;
+      }
+    }
+  }
+  .social-footer-icons {
+    li:last-of-type {
+      margin-right: 0;
+    }
+
+    .fab {
+      font-size: 1.5rem;
+      color: $white;
+
+      &:hover {
+        color: darken($dark-gray, 25%);
+        transition: color 0.3s ease-in;
+      }
+    }
+  }
 }

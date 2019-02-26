@@ -18,15 +18,18 @@
 
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
+  <!--Javascript imports from foundation 6 START-->
   <script src="js/vendor/jquery.js"></script>
   <script src="js/vendor/foundation.min.js"></script>
   <script src="js/vendor/what-input.js"></script>
   <script src="js/app.js"></script>
   <script src="js/components/modal.js"></script>
   <script src="js/main.js" type="module"></script>
+    <!--Javascript imports from foundation 6 END-->
 </head>
 
 <body>
+<!--HEADER START-->
   <div class="top-bar-container">
 
     <div class="top-bar">
@@ -48,6 +51,8 @@
 
     </div>
   </div>
+  <!--HEADER END-->
+  <!--HERO START-->
   <div class="grid-container-full">
     <div class="hero-section">
       <div class="hero-section-text">
@@ -58,20 +63,22 @@
       </div>
     </div>
   </div>
-  <div class="grid-container grid-container-top-pad">
+  <!--HEADER END-->
+  <!--HOW IT WORKS START-->
+  <div class="grid-container grid-container-top-pad how-it-works-container">
     <div class="grid-x grid-margin-x">
       <div class="cell auto"></div>
       <div class="cell small-9">
-        <div class="media-object">
+        <div class="media-object tablet-flex-switch ">
 
-          <div class="media-object-section">
-            <h4>How It Works</h4>
+          <div class="media-object-section" style="padding-bottom: 15px;">
+            <h3 class="bold">How It Works</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in laoreet lectus. Proin ac felis id
               massa auctor accumsan. Curabitur egestas ligula ac nisl fringilla sollicitudin.</p>
           </div>
           <div class="media-object-section">
             <div class="thumbnail">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/0J2QdDbelmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              <iframe style="max-width: 100%" width="560" height="315" src="https://www.youtube.com/embed/0J2QdDbelmY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             </div>
           </div>
@@ -80,49 +87,53 @@
       <div class="cell auto"></div>
     </div>
   </div>
-  <div class="grid-container grid-container-top-pad">
+  <!--HOW IT WORKS END-->
+  <!--WHAT YOU GET END-->
+  <div class="grid-container grid-container-top-pad bottom-pad">
     <div class="grid-x">
       <div class="cell auto"></div>
       <div class="cell small-6">
-        <h1 style="text-align: center">WHAT YOU GET</h1>
+        <h1 class="bold" style="text-align: center">WHAT YOU GET</h1>
       </div>
       <div class="cell auto"></div>
     </div>
-    <div class="grid-x grid-container-top-pad">
-      <div class="cell small-4">
-        <div class="card" style="width: 300px;">
-          <img src="https://via.placeholder.com/500x320">
+    <div class="grid-x grid-container-top-pad small-up-1 medium-up-3 large-up-3">
+      <div class="column">
+        <div class="card shrink" style="width: 300px;">
+          <img src="assets/doctor.jpg">
           <div class="card-section text-center">
-            <h4 class="card-title">This is a card.</h4>
+            <h4 class="card-title">FEATURE</h4>
             <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
         </div>
       </div>
-      <div class="cell small-4">
-        <div class="card" style="width: 300px;">
-          <img src="https://via.placeholder.com/500x320">
+      <div class="column">
+        <div class="card shrink" style="width: 300px;">
+          <img src="assets/calc.jpg">
           <div class="card-section text-center">
-            <h4 class="card-title">This is a card.</h4>
+            <h4 class="card-title">FEATURE</h4>
             <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
         </div>
       </div>
-      <div class="cell small-4">
-        <div class="card" style="width: 300px;">
-          <img src="https://via.placeholder.com/500x320">
+      <div class="column">
+        <div class="card shrink" style="width: 300px;">
+          <img src="assets/business.jpg">
           <div class="card-section text-center">
-            <h4 class="card-title">This is a card.</h4>
+            <h4 class="card-title">FEATURE</h4>
             <p>It has an easy to override visual style, and is appropriately subdued.</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="grid-container grid-container-top-pad" style="background-color: gray">
+  <!--WHAT YOU GET END-->
+  <!--TIMELINE START-->
+  <div class="grid-container grid-container-top-pad" style="background-color: #27B7B7; color: white; max-width: 100%;" >
     <div class="grid-x">
       <div class="cell auto"></div>
       <div class="cell small-6">
-        <h1 style="text-align: center">
+        <h1 class="bold" style="text-align: center">
           THE PROCESS
         </h1>
       </div>
@@ -131,7 +142,7 @@
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-icon">
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-user-md"></i>
         </div>
         <div class="timeline-content">
           <p class="timeline-content-date">2069</p>
@@ -140,7 +151,7 @@
       </div>
       <div class="timeline-item">
         <div class="timeline-icon">
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-laptop-medical"></i>
         </div>
         <div class="timeline-content right">
           <p class="timeline-content-date">2069</p>
@@ -149,7 +160,7 @@
       </div>
       <div class="timeline-item">
         <div class="timeline-icon">
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-medkit"></i>
         </div>
         <div class="timeline-content">
           <p class="timeline-content-date">2069</p>
@@ -158,7 +169,7 @@
       </div>
       <div class="timeline-item">
         <div class="timeline-icon">
-          <i class="fas fa-check-double"></i>
+          <i class="fas fa-laptop-medical"></i>
         </div>
         <div class="timeline-content right">
           <p class="timeline-content-date">2069</p>
@@ -167,15 +178,17 @@
       </div>
     </div>
   </div>
-  <div id="signup" class="grid-container grid-container-top-pad" style="background-color: lightgray">
+  <!--TIMELINE END-->
+  <!--Sign UP Today START-->
+  <div id="signup" class="grid-container-getstarted">
     <div class="grid-x">
       <div class="cell auto"></div>
       <div class="cell small-6">
 
-        <!--_______________________________________________________________________START FORM CONTACT___________________-->
+        <!--FORM CONTACT START-->
         <div style="text-align: center">
-          <h1>SIGN UP TODAY!</h1>
-          <button class="button" id="popup-getstarted" onclick="popup_getstarted()">Get Started</button>
+          <h1 class = "getstarted bold">SIGN UP TODAY!</h1>
+          <button class="button-getstarted" id="popup-getstarted" onclick="popup_getstarted()">Get Started</button>
           <div id="modal-safe" class="modal">
             <div class="modal-content">
               <span class="close">&times;</span>
@@ -190,7 +203,7 @@
                 <textarea id="comment" type="textarea">Enter your query.</textarea>
                 <button class="button-edit button-edit--secondary" type="submit" id="contactinfo" value="Submit">Submit<button>
               </form>
-              <!--_______________________________________________________________________END FORM CONTACT___________________-->
+              <!--FORM CONTACT END-->
 
             </div>
           </div>
@@ -201,7 +214,23 @@
 
 
   </div>
+    <!--SIGN UP TODAY END-->
   </div>
+  <!--FOOTER START-->
+  <footer class="social-footer">
+    <div class="social-footer-left">
+      <a href="#"><img class="logo" src="/assets/logo.png"></a>
+    </div>
+    <div class="social-footer-icons">
+      <ul class="menu simple">
+        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+        <li><a href="https://twitter.com/?lang=en"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <!--FOOTER END-->
 
 </body>
 
