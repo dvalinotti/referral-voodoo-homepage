@@ -14,10 +14,20 @@ body {
 }
 
 
+.grid-container-full {
+  background: none;
 
+  @include breakpoint(medium) {
+    background: url(../assets/hero-tablet.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
 .hero-section {
-  background-size: contain !important;
-  background-position: bottom !important;
+  background: none !important;
+  background-size: cover ;
+  background-position: bottom ;
+  background-repeat: no-repeat ;
   width: 75%;
   margin: 0 auto;
   text-align: center;
@@ -25,21 +35,25 @@ body {
   align-items: center;
   justify-content: flex-start;
   font-family: Montserrat;
-  background: url('../assets/hero-mobile.png') 50% no-repeat;
+  background: none;
   flex-direction: column;
-  height: 650px;
+  height: 100%;
 
   @include breakpoint(medium) {
-    background: url('../assets/hero.png') 50% no-repeat;
     background-size: contain;
     background-position: bottom;
+    background-repeat: no-repeat;
+    background: url("../assets/hero-tablet.png");
     flex-direction: row;
     height: 400px;
   }
 
   @include breakpoint(large) {
-    background-position: right;
+    background: url("../assets/hero-tablet.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
   }
+
 
 
 
@@ -53,10 +67,6 @@ body {
 
     @include breakpoint(medium) {
       display: inline-block;
-    }
-
-    @include breakpoint(large) {
-      padding-left: 10%;
     }
 
     .button-shadow {
@@ -88,12 +98,29 @@ body {
 
 
 }
+.hero-section-mobilebg {
+  display: flex;
+  overflow-y: hidden;
+  height: 100%;
+  @include breakpoint(medium) {
+    display: none;
+  }
 
+  img {
+    margin-top: auto;
+  }
+}
+}
 .button-edit--secondary {
   background-color: #27B7B7;
   color: white;
   padding: 10px 24px;
-  border-radius: 5px
+  border-radius: 5px;
+  z-index: 1;
+
+  &:hover {
+    background-color: #209b9b;
+  }
 }
 
 .grid-container-top-pad {
@@ -112,12 +139,22 @@ body {
   text-transform: uppercase;
 }
 
+.card-img{
+  width: 100%;
+	object-fit: cover;
+	height: 12rem;
+}
+
 li {
   .button-edit {
     background-color: $white;
     color: $black;
     padding: 10px 24px;
-    border-radius: 5px
+    border-radius: 5px;
+
+    &:hover {
+      background-color: lightgray;
+    }
   }
 }
 
@@ -169,6 +206,7 @@ $timeline-item-card: false;
 $timeline-item-card-radius: $global-radius;
 
 %clearfix {
+
   &::after,
   &::before {
     clear: both;
@@ -249,19 +287,22 @@ $timeline-item-card-radius: $global-radius;
 
     .timeline-content {
       //padding: 20px;
-      padding-top: 10px  !important;
+      padding-top: 10px !important;
       text-align: right;
       transition: $timeline-transition;
       width: 45%;
+      padding-right: 10px;
 
-      @if $timeline-item-card == true {
+      @if $timeline-item-card==true {
         background: $timeline-item-card-bg;
         border-radius: $timeline-item-card-radius;
 
         p {
           color: $black;
         }
-      } @else {
+      }
+
+      @else {
         background: transparent;
 
         p {
@@ -290,12 +331,13 @@ $timeline-item-card-radius: $global-radius;
       &.right {
         float: right;
         text-align: left;
+        padding-left: 10px;
       }
     }
   }
 }
 
-@include breakpoint(small only) {
+@include breakpoint(x-small only) {
   .timeline {
     margin: 30px;
     padding: 0;
@@ -361,9 +403,11 @@ $timeline-item-card-radius: $global-radius;
 
 
 $hero-height: 60vh;
+
 body {
   font-family: Montserrat !important;
 }
+
 .dropdown {
 
   img {
@@ -372,104 +416,55 @@ body {
   }
 
 }
-.grid-container-full {
-  height: 700px;
-  background: url('../assets/hero-mobile.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: bottom;
-
-  @include breakpoint(x-small) {
-    height: 750px;
-  }
-  @include breakpoint(small-med) {
-    height: 850px;
-  }
-  @include breakpoint(medium) {
-    background: url('../assets/hero-tablet.png');
-    height: 400px;
-    background-size: contain;
-    background-position: right;
-    background-repeat: no-repeat;
-  }
-
-  @include breakpoint(large) {
-    width: 75;
-    margin: 0 auto;
-  }
-
-  .hero-section {
-
-  height: $hero-height;
-  width: 75%;
-
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  background: none;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-
-  font-family: Montserrat;
-
-  flex-direction: column;
-
-  @include breakpoint(medium) {
-    background-size: bottom;
-    width: 85%;
-    flex-direction: row;
-    height: 100%;
-  }
-  @include breakpoint(large) {
-    background-position: right;
-    width: 90%;
-  }
 
 
 
-  .hero-section-text {
+    .hero-section-text {
 
-    text-align: left;
-    color: $black;
-    text-shadow: 1px 1px 2px $black;
-    max-width: 45%;
-    display: contents;
-    @include breakpoint(medium) {
-      display: inline-block;
-    }
-    @include breakpoint(large) {
-      padding-left: 10%;
-    }
+      text-align: left;
+      color: $black;
+      text-shadow: 1px 1px 2px $black;
+      max-width: 45%;
+      display: contents;
 
-    * {
-      text-shadow: none;
-      font-family: Montserrat;
-    }
+      @include breakpoint(medium) {
+        display: inline-block;
+      }
 
-    h1 {
-      line-height: 1;
-      font-size: 42px;
-    }
+      @include breakpoint(large) {
+        padding-left: 10%;
+      }
 
-    p {
-      font-size: 0.9rem;
-      margin-bottom: 15px;
+      * {
+        text-shadow: none;
+        font-family: Montserrat;
+      }
+
+      h1 {
+        line-height: 1;
+        font-size: 42px;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+
+      }
 
     }
 
-  }
 
-}
-}
+
 .button-edit--secondary {
   background-color: #27B7B7;
   color: white;
-  padding:10px 24px;
-  border-radius: 5px
+  padding: 10px 24px;
+  border-radius: 5px;
+  height: 45px;
 }
+
 .grid-container-top-pad {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 
 //---- CARD SECTION ----
@@ -477,11 +472,11 @@ body {
 .card {
   margin: 0 auto;
   border: 0;
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.10);
-  border-radius: 3px;
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.10);
+  border-radius: 3px;
 }
 
-.card-title{
+.card-title {
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -491,67 +486,78 @@ body {
 //--- END OF CARD SECTION ---
 
 li {
-.button-edit{
-  background-color: $white;
-  color: $black;
-  padding:10px 24px;
-  border-radius: 5px
+  .button-edit {
+    background-color: $white;
+    color: $black;
+    padding: 10px 24px;
+    border-radius: 5px
   }
 }
 
 //color
 $greyish: #c4c4c4;
-.top-bar-container {
-.top-bar{
-  a {
-    color: white;
-    text-decoration: none;
-  }
-  background-color: #27B7B7;
-  ul{
-    background-color: #27B7B7;
-  }
 
-  .top-bar-right {
-    .menu { .menu-phone {
-      color: $white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }}
+.top-bar-container {
+  .top-bar {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    background-color: #27B7B7;
+
+    ul {
+      background-color: #27B7B7;
+    }
+
+    .top-bar-right {
+      .menu {
+        .menu-phone {
+          color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
   }
 }
-}
+
 //Sign up today section
-.grid-container-getstarted{
-	background-color: white;
+.grid-container-getstarted {
+  background-color: white;
   margin: 120px auto;
-	.getstarted{
-		font-family: Montserrat;
-	}
+
+  .getstarted {
+    font-family: Montserrat;
+  }
 }
-.button-getstarted{
-	background-color: #27B7B7;//color -> green-ish
-	color: white;
-	padding:10px 24px;
-	border-radius: 5px
+
+.button-getstarted {
+  background-color: #27B7B7; //color -> green-ish
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px
 }
+
 //hover color brightness decreases by 10%
-.button-getstarted:hover{
-	background-color: #27B7B7; //color -> green-ish
-	filter:brightness(90%);//out of 100%(full brightness) only 90% is shown
-	color: white;
-	padding:10px 24px;
-	border-radius: 5px
+.button-getstarted:hover {
+  background-color: #27B7B7; //color -> green-ish
+  filter: brightness(90%); //out of 100%(full brightness) only 90% is shown
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px
 }
+
 // end of getstarted section
 .bold {
   font-weight: bold;
 }
+
 .tablet-flex-switch {
   flex-direction: column;
 
-  @include breakpoint(large){
+  @include breakpoint(large) {
     flex-direction: row;
   }
 
@@ -560,12 +566,22 @@ $greyish: #c4c4c4;
     display: flex;
     justify-content: center;
     flex-direction: column;
+
     @include breakpoint(large) {
       width: 50%;
     }
+
     .thumbnail {
-      border: none ;
-      iframe { max-width: 100%; }
+      box-shadow: none;
+      border: none;
+      margin: 0 auto;
+
+      @include breakpoint(large) {
+        margin: 0;
+      }
+      iframe {
+        max-width: 100%;
+      }
     }
   }
 }
@@ -575,16 +591,20 @@ $greyish: #c4c4c4;
 }
 
 .how-it-works-container {
-  padding: 30px 0 !important;
+  padding: 45px 0;
   max-width: 100% !important;
   background-color: #27B7B7;
   color: white;
   height: 600px;
+
   @include breakpoint(medium) {
     height: 550px;
+
   }
+
   @include breakpoint(large) {
     height: 400px;
+    padding: 30px 10rem;
   }
 }
 
@@ -595,6 +615,7 @@ $greyish: #c4c4c4;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   .social-footer-left {
     a {
       img {
@@ -603,6 +624,7 @@ $greyish: #c4c4c4;
       }
     }
   }
+
   .social-footer-icons {
     li:last-of-type {
       margin-right: 0;
