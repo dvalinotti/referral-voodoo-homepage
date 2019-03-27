@@ -25,6 +25,7 @@
   <script src="js/app.js"></script>
   <script src="js/components/modal.js"></script>
   <script src="js/main.js" type="module"></script>
+
     <!--Javascript imports from foundation 6 END-->
 </head>
 
@@ -57,9 +58,11 @@
     <div class="hero-section">
       <div class="hero-section-text">
         <h1>Word of Mouth Marketing</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in laoreet lectus. Proin ac felis id massa
-          auctor accumsan. Curabitur egestas ligula ac nisl fringilla sollicitudin.</p>
-        <button class="button-edit--secondary button-shadow" onclick="startup()">Get Started</button>
+        <p>ReferralVoodoo is a cloud-based application that makes it simple and easy to
+          activate / incent your existing customers to bring in new business. Unlike most
+          referral or affiliate marketing software, ReferralVoodoo works with businesses
+          that do not have an e-commerce transaction system. </p>
+        <button data-animation-in="slide-in-down slide-out-up" class="button-edit--secondary button-shadow" onclick="startup()">Get Started</button>
       </div>
 
     </div>
@@ -77,8 +80,9 @@
 
           <div class="media-object-section" style="padding-bottom: 15px;">
             <h3 class="bold">How It Works</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in laoreet lectus. Proin ac felis id
-              massa auctor accumsan. Curabitur egestas ligula ac nisl fringilla sollicitudin.</p>
+            <p>In its simplest form, ReferralVoodoo works like a standard referral card program.
+            A card (or email / text) is sent from a happy customer to their friend that they want to refer.
+            The friend is offered an incentive or reward if they become a customer of the business.</p>
           </div>
           <div class="media-object-section">
             <div class="thumbnail">
@@ -92,10 +96,10 @@
   </div>
   <!--HOW IT WORKS END-->
   <!--WHAT YOU GET END-->
-  <div class="grid-container grid-container-top-pad bottom-pad">
+  <div class="grid-container grid-container-top-pad bottom-pad" data-sal="slide-up">
     <div class="grid-x">
       <div class="cell auto"></div>
-      <div class="cell small-6">
+      <div class="cell small-6" >
         <h1 class="bold" style="text-align: center">WHAT YOU GET</h1>
       </div>
       <div class="cell auto"></div>
@@ -106,7 +110,7 @@
           <img class="card-img" src="assets/doctor.jpg">
           <div class="card-section text-center">
             <h4 class="card-title">FEATURE</h4>
-            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+            <p>Happy customers = Greater trust = Less selling effort.</p>
           </div>
         </div>
       </div>
@@ -115,7 +119,7 @@
           <img class="card-img" src="assets/calc.jpg">
           <div class="card-section text-center">
             <h4 class="card-title">FEATURE</h4>
-            <p>It has an easy to override visual style, and is appropriately subdued.</p>
+            <p>When potential customers call, the operator may ask 'How did you hear about us'</p>
           </div>
         </div>
       </div>
@@ -184,16 +188,27 @@
   <!--TIMELINE END-->
   <!--Sign UP Today START-->
   <div id="signup" class="grid-container-getstarted">
-    <div class="grid-x">
-      <div class="cell auto"></div>
-      <div class="cell small-6">
+    <div class="grid-x grid-x-getstarted">
+      <div class="cell small-4 align-self-top left-con">
+	<div id="slideshowleft" class = "slideshowleft">
+   <div1>
+     <img src="assets/doctor.jpg">
+   </div1>
+   <div1>
+     <img src="assets/adult-doctor-girl-355934.jpg">
+   </div1>
+   <div>
+   </div>
+</div>
+</div>
+      <div class="cell small-4">
 
         <!--FORM CONTACT START-->
         <div style="text-align: center">
           <h1 class = "getstarted bold">SIGN UP TODAY!</h1>
-          <button class="button-getstarted" id="popup-getstarted" onclick="popup_getstarted()">Get Started</button>
-          <div id="modal-safe" class="modal">
-            <div class="modal-content">
+          <button type = "button" id = "popup-getstarted" class="button-getstarted" onclick="popup_getstarted()">Get Started</button>
+<div id="modal-safe" class="modal" animation-in="slideInRight">
+            <div class="modal-content" >
               <span class="close">&times;</span>
               <form>
                 <label for="name">Full Name</label>
@@ -207,13 +222,27 @@
                 <button class="button-edit button-edit--secondary" type="submit" id="contactinfo" value="Submit">Submit<button>
               </form>
               <!--FORM CONTACT END-->
-
             </div>
           </div>
         </div>
       </div>
-      <div class="cell auto"> </div>
+      <div class="cell small-4 align-self-top right-con">
+
+	<div id="slideshowright" class = "slideshowright">
+   <div2>
+     <img src="assets/business.jpg">
+   </div2>
+   <div2>
+     <img src="assets/calc.jpg">
+   </div2>
+   <div>
+   </div>
+</div>
+	</div>
     </div>
+
+
+
 
 
   </div>
