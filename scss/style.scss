@@ -16,10 +16,13 @@ body {
 
 .grid-container-full {
   background: none;
+  padding-top: 0;
 
   @include breakpoint(medium) {
     background: url(../assets/hero-tablet.png);
     background-size: contain;
+    height: 490px;
+    padding-top: 35px;
     background-repeat: no-repeat;
     background-position: bottom;
   }
@@ -101,7 +104,7 @@ body {
 .hero-section-mobilebg {
   display: flex;
   overflow-y: hidden;
-  height: 100%;
+  height: 400px;
   @include breakpoint(medium) {
     display: none;
   }
@@ -188,13 +191,23 @@ $greyish: #c4c4c4;
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-wrap: nowrap;
         }
       }
     }
   }
 }
 
+.menu.simple {
+  flex-wrap: nowrap; 
+  li {
+    margin-right: 0.5rem;
 
+    @media (min-width: 480px) {
+      margin-right: 1rem;
+    }
+  }
+}
 //TIMELINE
 
 $timeline-color: $black;
@@ -218,11 +231,12 @@ $timeline-item-card-radius: $global-radius;
 
 // Timeline
 .timeline {
-  margin: 30px auto;
+  margin: 30px auto 0;
   padding: 0 10px;
   position: relative;
   transition: $timeline-transition;
   width: 100%;
+  max-width: 900px;
 
   &::before {
     background: $timeline-color;
@@ -471,6 +485,7 @@ body {
 
 .card {
   margin: 0 auto;
+  min-height: 350px;
   border: 0;
   box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.10);
   border-radius: 3px;
@@ -512,11 +527,13 @@ $greyish: #c4c4c4;
 
     .top-bar-right {
       .menu {
+        flex-wrap: nowrap;
         .menu-phone {
           color: $white;
           display: flex;
           justify-content: center;
           align-items: center;
+          flex-wrap: nowrap;
         }
       }
     }
@@ -524,30 +541,78 @@ $greyish: #c4c4c4;
 }
 
 //Sign up today section
-.grid-container-getstarted {
-  background-color: white;
-  margin: 120px auto;
-
-  .getstarted {
-    font-family: Montserrat;
-  }
+.grid-x-getstarted {
+  align-items: center;
 }
-@media (max-width:760px){
 .grid-x-getstarted{
-	flex-flow: column wrap !important;
-	padding-left: 30%
+	flex-flow: column wrap;
+	padding: 0;
+  align-items: center !important;
 }
 .slideshowright{
-	float:left;
+  margin: 0 auto;
+
 }
 .slideshowleft{
-	float:left;
+  margin: 0 auto;
+
+}
+.grid-container-getstarted { 
+    margin: 0;
+    height: 450px;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%,rgba(255,255,255,0.67) 21%,rgba(19,185,185,0.19) 51%,rgba(11,183,183,0.21) 52%,rgba(39,183,183,0.98) 99%,rgba(39,183,183,1) 100%); 
+
+    .grid-x-getstarted {
+      padding: 10em 0;
+    }
 }
 .right-con{
 	padding-top:4%;
+  display: flex;
+  margin: 0 auto;
+  @include breakpoint(medium) {
+  margin: 0;
+}
 }
 .left-con{
-	padding-bottom:4%;
+padding-bottom:4%;
+  display: flex;
+    margin: 0 auto;
+  @include breakpoint(medium) {
+    margin: 0;
+  }
+}
+@include breakpoint(medium){
+  .grid-container-getstarted {
+    background-color: white;
+.grid-x-getstarted{
+    flex-flow: row wrap;
+    height: 100%;
+  }
+
+    .getstarted {
+      font-family: Montserrat;
+    }
+  }
+  .slideshowright{
+  	float:left;
+  }
+  .slideshowleft{
+  	margin-left: auto;
+  }
+.left-con{
+  display: flex;
+    margin: 0 auto;
+  @include breakpoint(medium) {
+    margin: 0;
+  }
+}
+.right-con{
+  display: flex;
+  margin: 0 auto;
+  @include breakpoint(medium) {
+  margin: 0;
+}
 }
 }
 .button-getstarted {
@@ -565,7 +630,6 @@ $greyish: #c4c4c4;
   padding: 10px 24px;
   border-radius: 5px
 }
-
 // end of getstarted section
 .bold {
   font-weight: bold;
@@ -574,9 +638,6 @@ $greyish: #c4c4c4;
 .tablet-flex-switch {
   flex-direction: column;
 
-  @include breakpoint(large) {
-    flex-direction: row;
-  }
 
   .media-object-section {
     width: 100%;
@@ -585,7 +646,7 @@ $greyish: #c4c4c4;
     flex-direction: column;
 
     @include breakpoint(large) {
-      width: 50%;
+      width: 100%;
     }
 
     .thumbnail {
@@ -594,10 +655,11 @@ $greyish: #c4c4c4;
       margin: 0 auto;
 
       @include breakpoint(large) {
-        margin: 0;
+        margin: 0 auto;
       }
       iframe {
         max-width: 100%;
+        max-height: 100%;
       }
     }
   }
@@ -615,13 +677,40 @@ $greyish: #c4c4c4;
   height: 600px;
 
   @include breakpoint(medium) {
-    height: 550px;
+    height: 750px;
 
   }
 
   @include breakpoint(large) {
-    height: 400px;
-    padding: 30px 10rem;
+    padding: 60px 10rem;
+  }
+
+  .grid-x {
+    height: 100%;
+
+    > * {
+      height: 100%;
+
+      .media-object {
+        height: 100%;
+
+        &-section {
+          &:first-child {
+            @include breakpoint(medium) {
+              width: 80%;
+              margin: 0 auto;
+            }
+          }
+          &:nth-child(2) {
+            height: 100%;
+             
+            .thumbnail {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

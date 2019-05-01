@@ -32,3 +32,13 @@ setInterval(function() {
     .end()
     .appendTo('#slideshowright');
 }, 3000);
+
+function send_email(){
+    var name = document.getElementById("name").value;
+    var emailfrom = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var comment = document.getElementById("comment").value;
+    var emailto = "jose@srlgroup.co"
+    var payload = "mailto:" + emailto + "?subject=" + "ReferralVoodoo: Request for Information" + "&body=" + comment + "%0D%0A" + "Thank You," + "%0D%0A" + name + "%0D%0A" + "Contact information: " + "%0D%0A"+ "Email: " + emailfrom + "%0D%0A" + "Phone Number: "+ phone;
+    location.href = payload;
+}

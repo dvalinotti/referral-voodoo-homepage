@@ -17,12 +17,14 @@
     "foundation-sites": "^6.5.1",
     "jquery": ">=3.0.0",
     "node-sass": "^4.11.0",
+    "rellax": "^1.9.1",
     "what-input": "^5.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "browser-sync": "^2.23.7",
     "gulp": "^4.0.0",
+    "gulp-connect-php": "^1.0.3",
     "gulp-load-plugins": "^1.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.1",
